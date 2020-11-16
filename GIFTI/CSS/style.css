@@ -1,0 +1,145 @@
+body {
+    font-family: 'SCDream';
+    src:url("font/SCDream4.otf") format("opentype");
+    background-color: #353535;
+
+}
+h1 {
+    text-align: center;
+    font-size: 65px;
+}
+#comment {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+}
+img {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+#copyright {
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:50px;   
+}
+.choice {
+    background-color:  #353535;
+    font-size: 16px;
+    border-radius: 12px;
+}
+#question {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+}
+a {
+    width: 10px;
+    /* 줄바꿈 제거 */
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+#next {
+    background-color: #F7CA18;
+    border: none;
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 70px;
+    height: 40px;
+    border-radius: 12px;
+    margin:20px auto;
+    display:block;
+    margin-top: 40px;
+    font-family: "JejuMyeongjoOTF";
+}
+a.animated-button.thar-three {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    margin:30px auto;
+    text-align: center;
+	cursor: pointer;
+	position: relative;
+	border: 2px solid #F7CA18;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    display: flex;
+    /* 수평 중앙 정렬 */
+    justify-content: center;
+    /* 수직 중앙 정렬 */
+    align-items: center;
+}
+a.animated-button.thar-three:hover {
+    color: #000 !important;
+	background-color: transparent;
+    text-shadow: nthree;
+}
+a.animated-button.thar-three:hover:before {
+	left: 0%;
+	right: auto;
+    width: 100%;
+    border-radius: 10px;
+}
+a.animated-button.thar-three:before {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+button.animated-button.thar-three {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    text-decoration: none;
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    margin:30px auto;
+    font-family: "JejuMyeongjoOTF";
+    text-align: center;
+	position: relative;
+	border: 2px solid #F7CA18;
+    /* 수평 중앙 정렬 */
+    justify-content: center;
+    /* 수직 중앙 정렬 */
+    align-items: center;
+}
+button.animated-button.thar-three:hover {
+    background-color: #F7CA18;
+    color: black;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
