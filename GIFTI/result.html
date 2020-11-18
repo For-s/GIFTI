@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GIFTI</title>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- 화면 캡쳐 CDN -->
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    </head>
+    <body>
+        <a href="main.html" style="text-decoration: none;">
+            <!-- <img src="gift.png" style="width:50px; height:50px;display: inline;"> -->
+            <h4 style="font-size: 35px; color:  #F7CA18; text-align: center;">GIFTI</h4>
+        </a>
+        <div id="capture" style="background: #353535; width: 300px; height: 600px; margin: auto;">
+            <div style="color: #F7CA18; width: 200px; height: 200px; border-color: #F7CA18; border-width: 5px; border-style: solid; text-align: center; margin: auto; display: flex; justify-content: center; align-items: center;">결과</div>
+            <h5 style="font-size: 15px; color:  #F7CA18; text-align: center; text-align: center;">Made by GIFTI</h5>
+            <button id="store" style="width: 100px;">저장하기</button>
+            <button id="share" style="width: 100px;">공유하기</button>
+        </div>
+        <p id="copyright">ⓒ 2020. For's all rights reserved.</p>
+        <script>
+            $(function(){
+                $("#store").on("click", function(){
+                    // 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴
+                    html2canvas(document.querySelector("#capture")).then(canvas => {
+                        saveAs(canvas.toDataURL('image/png'),"GIFTI.png");
+                    });
+                });
+                function saveAs(uri, filename) {
+                    // 캡쳐된 파일을 이미지 파일로 내보내기
+                    var link = document.createElement('a');
+                    if (typeof link.download === 'string') {
+                        link.href = uri;
+                        link.download = filename;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    } else {
+                        window.open(uri);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
