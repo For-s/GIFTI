@@ -11,7 +11,6 @@ const pageRouter = require('./routes/page');
 const app = express();
 app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'html');
-app.set('views', 'GIFTI/views');
 
 nunjucks.configure('GIFTI/views', {
   express: app,
@@ -51,5 +50,5 @@ app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
 
-app.use('/js', express.static('GIFTI/public/js'));
-app.use('/css',express.static('GIFTI/public/css'));
+//app.use('/js', express.static('GIFTI/public/js'));
+//app.use('/css',express.static('GIFTI/public/css/style.css'));
