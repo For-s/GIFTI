@@ -1,5 +1,5 @@
 const express = require('express');
-const { Top3 } = require('../models');
+const Top3 = require('../models/top3');
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ router.route('/')
     .get(async(req,res,next)=>{
         try{
             const top3 = await Top3.findAll();
-            res.json(ntsf);
+            res.json(top3);
         } catch(err){
             console.error(err);
             next(err);
@@ -35,3 +35,5 @@ router.route('/')
             next(err);
         }
     });
+
+module.exports = router;

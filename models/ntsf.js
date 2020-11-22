@@ -7,6 +7,22 @@ module.exports = class Comment extends Sequelize.Model {
         type: Sequelize.STRING(2),
         allowNull: false,
       },
+      n: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      t: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      s: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      f: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
     }, {
       sequelize,
       timestamps: false,

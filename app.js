@@ -4,15 +4,16 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 
 const { sequelize } = require('./models');
-const indexRouter = require('./routes');
 const ntsfRouter = require('./routes/ntsf');
 const top3Router = require('./routes/top3');
+const pageRouter = require('./routes/page');
 
 const app = express();
 app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'html');
-//views부분 GIFTI로 변경했으나, GIFTI라는 파일이름을 views로 바꿔야 할 것 같아요
-nunjucks.configure('GIFTI', {
+app.set('views', 'GIFTI/views');
+
+nunjucks.configure('GIFTI/views', {
   express: app,
   watch: true,
 });
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/', indexRouter);
+app.use('/', pageRouter);
 app.use('/ntsf', ntsfRouter);
 app.use('/top3', top3Router);
 
@@ -49,3 +50,6 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
+
+app.use('/js', express.static('GIFTI/public/js'));
+app.use('/css',express.static('GIFTI/public/css'));

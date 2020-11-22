@@ -17,6 +17,10 @@ router.route('/')
         try{
             const ntsf = await Ntsf.create({
                 ntsf: req.body.ntsf,
+                n: req.body.n,
+                t: req.body.t,
+                s: req.body.s,
+                f: req.body.f,
             });
             console.log(ntsf);
             res.status(201).json(ntsf);
@@ -25,3 +29,5 @@ router.route('/')
             next(err);
         }
     });
+
+module.exports = router;

@@ -4,47 +4,47 @@ module.exports = class Comment extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
       book: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       elec: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       furn: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       leisure: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       food: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       cos: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       clothes: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       inner: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       acc: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       kit: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
       bags: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.FLOAT.UNSIGNED,
         allowNull: false,
       },
     }, {
