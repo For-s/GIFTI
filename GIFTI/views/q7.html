@@ -4,24 +4,24 @@
         <meta charset="UTF-8">
         <title>GIFTI</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="./../public/CSS/style.css">
     </head>
     <body>
         <script type="text/javascript" src="button_event.js"></script>
         <a href="main.html" style="text-decoration: none;">
-            <!-- <img src="gift.png" style="width:50px; height:50px;display: inline;"> -->
+            <!-- <img src="./../public/gift.png" style="width:50px; height:50px;display: inline;"> -->
             <h4 style="font-size: 35px; color:  #F7CA18; text-align: center;">GIFTI</h4>
         </a>
-        <p id="question">추운 겨울,<br>나를 위해 몇 십 분동안 줄을 서서<br>한정판 선물을 가져온 내 친구,<br>이 때 당신의 반응은?</p>
+        <p id="question">함께 쇼핑을 하던 친구가<br>엉뚱한 물건을 사려고 한다.<br>이 때 나의 반응은?</p>
         <div class="col-md-3 col-sm-3 col-xs-6"> 
             <button class="choice btn btn-sm animated-button thar-three" style="width: 400px;" id='f'
-            onclick="btn_event(this.id)">헉 많이 추웠지!? 기다리느라 많이 힘들진 않았어?? 너무 고마워</button> 
+            onclick="btn_event(this.id)">친구가 재미를 느낄 수 있는 것만으로도 기쁘다!<br>적극적으로 장려해준다.</button> 
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6"> 
             <button class="choice btn btn-sm animated-button thar-three" style="width: 400px;" id='t'
-            onclick="btn_event(this.id)">역시 리미티드라 그런가 미쳤다 너무 멋있는데? 진짜 고마워</button> 
+            onclick="btn_event(this.id)">그 물건의 실용도와 활용도를 고려하고 구매하라고 조언해준다.</button> 
         </div>
-        <button type="button" onClick="next_event(6)" id="next">next</button>
+        <button type="button" onClick="next_event(7)" id="next">next</button>
         <p id="copyright">ⓒ 2020. For's all rights reserved.</p>
     </body>
 </html>
