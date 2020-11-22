@@ -7,18 +7,21 @@
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
     </head>
     <body>
+        <script type="text/javascript" src="button_event.js"></script>
         <a href="main.html" style="text-decoration: none;">
             <!-- <img src="gift.png" style="width:50px; height:50px;display: inline;"> -->
             <h4 style="font-size: 35px; color:  #F7CA18; text-align: center;">GIFTI</h4>
         </a>
         <p id="question">다음 중 더 기분좋은 말은?</p>
         <div class="col-md-3 col-sm-3 col-xs-6"> 
-            <button class="choice btn btn-sm animated-button thar-three" style="width: 400px;">진짜 똑똑하다. 어떻게 이런 생각을 하지?<br>넌 천재야!</button> 
+            <button class="choice btn btn-sm animated-button thar-three" style="width: 400px;" id='t'
+            onclick="btn_event(this.id)">진짜 똑똑하다. 어떻게 이런 생각을 하지?<br>넌 천재야!</button> 
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6"> 
-            <button class="choice btn btn-sm animated-button thar-three" style="width: 400px;">너는 가장 소중한 친구고, 나에게 정말 특별해.</button> 
+            <button class="choice btn btn-sm animated-button thar-three" style="width: 400px;" id='f'
+            onclick="btn_event(this.id)">너는 가장 소중한 친구고, 나에게 정말 특별해.</button> 
         </div>
-        <button type="button" onClick="location.href='q9.html'" id="next">next</button>
+        <button type="button" onClick="next_event(8)" id="next">next</button>
         <p id="copyright">ⓒ 2020. For's all rights reserved.</p>
     </body>
 </html>
