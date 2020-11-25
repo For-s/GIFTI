@@ -1,15 +1,31 @@
+@font-face {
+    font-family:"fontThick";
+    src:url("../font/SCDream7.otf") format("opentype");
+}
+
+@font-face{
+    font-family:"fontLight";
+    src:url("../font/SCDream5.otf") format("opentype");
+}
+
+
+
 body {
-    font-family: 'SCDream';
-    src:url("font/SCDream4.otf") format("opentype");
-    background-color: #353535;
+    font-family:fontLight;
+    background-image:url("../img/background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:left;
+    min-height: 100%;
 
 }
+
 h1 {
     text-align: center;
     font-size: 65px;
 }
 #comment {
-    color: white;
+    color : #654321;
     text-align: center;
     font-size: 20px;
     font-weight: 500;
@@ -24,11 +40,11 @@ img {
     margin-top: 50px;
 }
 #copyright {
-    color: white;
+    color:#654321;
     text-align: center;
     font-size: 13px;
     position:absolute;
-    bottom:0;
+    padding-top:10px;
     width:100%;
     height:50px;   
 }
@@ -41,12 +57,14 @@ img {
     margin-top: 20px;
     text-align: center;
     margin-bottom: 50px;
-    color: white;
+    font-family: "fontThick";
+    color:#654321;
     text-align: center;
     font-size: 20px;
     font-weight: 500;
     line-height: 160%;
 }
+
 a {
     width: 10px;
     /* 줄바꿈 제거 */
@@ -68,10 +86,11 @@ a {
     margin:20px auto;
     display:block;
     margin-top: 40px;
-    font-family: "JejuMyeongjoOTF";
+    font-family: "fontLight";
 }
+
 a.animated-button.thar-three {
-    color: white;
+    color: #654321;
     text-decoration: none;
     font-size: 16px;
     width: 200px;
@@ -115,19 +134,19 @@ a.animated-button.thar-three:before {
 }
 button.animated-button.thar-three {
     background: transparent;
-    color: white;
+    color:#654321;
     cursor: pointer;
     display: flex;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     width: 200px;
     height: 50px;
     border-radius: 12px;
     margin:30px auto;
-    font-family: "JejuMyeongjoOTF";
+    font-family: "fontLight";
     text-align: center;
 	position: relative;
 	border: 2px solid #F7CA18;
