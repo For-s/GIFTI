@@ -2,7 +2,7 @@ var choiced_id;
 
 //추가할 것 : DB 연동해서 n,s,t,f 값 0부터 올려가기
 
-var html_list = ['q1.html','q2.html','q3.html','q4.html','q5.html',
+var html_list = ['q1','q2','q3','q4','q5.html',
 'q6.html','q7.html','q8.html','q9.html','q10.html'];
 
 function btn_event (id) {

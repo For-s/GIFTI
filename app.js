@@ -25,13 +25,18 @@ sequelize.sync({ force: false })
   });
 
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './GIFTI/public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 
 app.use('/', pageRouter);
 app.use('/ntsf', ntsfRouter);
 app.use('/top3', top3Router);
+
+app.get('/', (req,res) => {
+  res.sendFile(path.join(__dirname, './GIFTI/views/index.html'));
+});
 
 app.use((req, res, next) => {
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
@@ -50,5 +55,3 @@ app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
 
-//app.use('/js', express.static('GIFTI/public/js'));
-//app.use('/css',express.static('GIFTI/public/css/style.css'));
