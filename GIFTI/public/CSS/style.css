@@ -9,10 +9,11 @@
 body {
     font-family:fontLight;
     background-image:url("../img/background.jpg");
-    background-repeat:no-repeat;
+    min-height:100%;
+    background-position:center center;
     background-size:cover;
-    background-position:left;
-    min-height: 100%;
+    background-attachment:fixed;
+
 }
 .finalQ {
     font-size: 20px;
@@ -183,6 +184,18 @@ button.animated-button.thar-three:hover {
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
+
+button.animated-button.thar-three:active {
+    transform:translateY(4px);
+}
+
+button.animated-button.thar-three:focus{
+    background-color : #F7CA18;
+    color:black;
+    outline:none !important ;
+}
+
+
 .shaking {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
