@@ -2,14 +2,10 @@
     font-family:"fontThick";
     src:url("../font/SCDream7.otf") format("opentype");
 }
-
 @font-face{
     font-family:"fontLight";
     src:url("../font/SCDream5.otf") format("opentype");
 }
-
-
-
 body {
     font-family:fontLight;
     background-image:url("../img/background.jpg");
@@ -17,9 +13,36 @@ body {
     background-size:cover;
     background-position:left;
     min-height: 100%;
-
 }
-
+.finalQ {
+    font-size: 20px;
+    text-decoration:none; 
+    color: white;
+    border-bottom:4px solid #F7CA18; border-top:4px solid #F7CA18; 
+    padding-bottom:6px; padding-top:6px;
+}
+.highlight {
+    color: black;
+    background: linear-gradient(to top, #F7CA18 50%, transparent 50%);
+    font-weight: bold;
+}
+p {
+    text-align: center;
+    color: white;
+}
+#rank {
+    color: #F7CA18;
+    text-align: center;
+    padding-right: 20px;
+}
+table {
+    font-size: 25px;
+    display: flex;
+    /* 수평 중앙 정렬 */
+    justify-content: center;
+    /* 수직 중앙 정렬 */
+    align-items: center;
+}
 h1 {
     text-align: center;
     font-size: 65px;
@@ -64,7 +87,6 @@ img {
     font-weight: 500;
     line-height: 160%;
 }
-
 a {
     width: 10px;
     /* 줄바꿈 제거 */
@@ -72,7 +94,7 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
-#next {
+#next, #store1, #store2, #share, #kakaoBtn {
     background-color: #F7CA18;
     border: none;
     color:black;
@@ -88,7 +110,6 @@ a {
     margin-top: 40px;
     font-family: "fontLight";
 }
-
 a.animated-button.thar-three {
     color: #654321;
     text-decoration: none;
@@ -162,27 +183,22 @@ button.animated-button.thar-three:hover {
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
-
 .shaking {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
   }
-  
   @keyframes shake {
     10%, 90% {
       transform: translate3d(-1px, 0, 0);
     }
-    
     20%, 80% {
       transform: translate3d(2px, 0, 0);
     }
-  
     30%, 50%, 70% {
       transform: translate3d(-4px, 0, 0);
     }
-  
     40%, 60% {
       transform: translate3d(4px, 0, 0);
     }
