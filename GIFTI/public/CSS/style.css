@@ -26,8 +26,6 @@ body {
     background-position:center left 20%;
     background-size:cover;
     background-attachment:fixed;
-<<<<<<< HEAD
-=======
 }
 .menu__link {
     text-align: center;
@@ -59,7 +57,6 @@ body {
     stroke-dashoffset: 0;
     opacity: 1;
     transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
->>>>>>> 647d8d3af83d702c73bfad9e26161f21d01ba9ad
 }
 
 .finalQ {
@@ -182,9 +179,9 @@ a.animated-button.thar-three {
     border-radius: 12px;
     margin:30px auto;
     text-align: center;
-	cursor: pointer;
-	position: relative;
-	border: 2px solid #F7CA18;
+   cursor: pointer;
+   position: relative;
+   border: 2px solid #F7CA18;
     transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
     display: flex;
     /* 수평 중앙 정렬 */
@@ -194,26 +191,26 @@ a.animated-button.thar-three {
 }
 a.animated-button.thar-three:hover {
     color: #000 !important;
-	background-color: transparent;
+   background-color: transparent;
     text-shadow: nthree;
 }
 a.animated-button.thar-three:hover:before {
-	left: 0%;
-	right: auto;
+   left: 0%;
+   right: auto;
     width: 100%;
     border-radius: 10px;
 }
 a.animated-button.thar-three:before {
-	display: block;
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	height: 100%;
-	width: 0px;
-	z-index: -1;
-	content: '';
-	color: #000 !important;
-	background: #F7CA18;
+   display: block;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   height: 100%;
+   width: 0px;
+   z-index: -1;
+   content: '';
+   color: #000 !important;
+   background: #F7CA18;
     transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 button.animated-button.thar-three {
@@ -232,8 +229,8 @@ button.animated-button.thar-three {
     margin:30px auto;
     font-family: "fontLight";
     text-align: center;
-	position: relative;
-	border: 2px solid #F7CA18;
+   position: relative;
+   border: 2px solid #F7CA18;
     /* 수평 중앙 정렬 */
     justify-content: center;
     /* 수직 중앙 정렬 */
