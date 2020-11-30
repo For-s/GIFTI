@@ -7,25 +7,71 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <!-- 화면 캡쳐 CDN -->
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     </head>
     <body>
         <a href="main" style="text-decoration: none;">
             <!-- <img src="./../public/gift.png" style="width:50px; height:50px;display: inline;"> -->
             <h4 style="font-size: 35px; color:  #F7CA18; text-align: center;">GIFTI</h4>
         </a>
-        <div id="capture" style="background: #353535; width: 300px; height: 600px; margin: auto;">
-            <div style="color: #F7CA18; width: 200px; height: 200px; border-color: #F7CA18; border-width: 5px; border-style: solid; text-align: center; margin: auto; display: flex; justify-content: center; align-items: center;">결과</div>
-            <h5 style="font-size: 15px; color:  #F7CA18; text-align: center; text-align: center;">Made by GIFTI</h5>
-            <button id="store" style="width: 100px;">저장하기</button>
-            <button id="share" style="width: 100px;">공유하기</button>
+
+        <!-- 당신이 받고 싶은 선물은? -->
+        <div id="capture1" style="background: #353535; width: 300px; margin: auto;">
+            <p class="finalQ">당신이 받고 싶은 선물은?</p>
+            <table style="color: white; margin-top: 50px; margin-bottom: 70px;">
+              <tr>
+                <td id="rank">1위</td>
+                <td>신발</td>
+              </tr>
+              <tr>
+                <td id="rank">2위</td>
+                <td>향수</td>
+              </tr>
+              <tr>
+                <td id="rank">3위</td>
+                <td>카페 기프티콘</td>
+              </tr>
+            </table>
+            <h5 style="font-size: 15px; color:  #F7CA18; text-align: center; text-align: center; margin-bottom: 30px;">Made by GIFTI</h5>
+            <button id="store1" style="width: 120px; font-size: 14px; height: 35px; margin-top: 50px; margin-bottom: 100px;">이미지로 저장</button>
+            <!-- <button id="storebtn">이미지로 저장</button> -->
         </div>
+
+        <!-- 당신의 GIFTI는? -->
+        <div id="capture2" style="background: #353535; width: 300px; margin: auto;">
+          <p class="finalQ" style="margin-bottom: 30px;">당신의 GIFTI는?</p>
+            <img src="boy.png" style="height: 100px; width: 100px; margin-bottom: 50px; margin-top: 50px;">
+            <p style="line-height: 30px;">마냥 신나는<br><b>어린이날</b><br>블라블라</p>
+            <h5 style="font-size: 15px; color:  #F7CA18; text-align: center; text-align: center; padding-bottom: 30px;">Made by GIFTI</h5>
+            <button id="store2" style="width: 120px; font-size: 14px; height: 35px; margin-top: 50px; margin-bottom: 100px;">이미지로 저장</button>
+        </div>
+        <button id="kakaoBtn" style="width: 150px; font-size: 14px; height: 35px;">카카오톡으로 공유</button>
         <p id="copyright">ⓒ 2020. For's all rights reserved.</p>
+
+        <!-- Kakao API -->
+        <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+        <script>
+        Kakao.init('a96f0794f475b7b50a6ff32d4d0fe4a2'); // javascript key 삽입(kakao developers)
+        $("#kakaoBtn").click(function(e) { //jquery를 사용한다 가정
+          e.preventDefault(); //이벤트 버블링 prevent
+          Kakao.Link.sendCustom({
+            templateId: 41111 // 카카오 메시지 템플릿 ID 
+          });
+        });
+        </script>
+        
         <script>
             $(function(){
-                $("#store").on("click", function(){
+                $("#store1").on("click", function(){
                     // 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴
-                    html2canvas(document.querySelector("#capture")).then(canvas => {
-                        saveAs(canvas.toDataURL('image/png'),"GIFTI.png");
+                    html2canvas(document.querySelector("#capture1")).then(canvas => {
+                        saveAs(canvas.toDataURL('image/png'),"GIFTI_present.png");
+                    });
+                });
+                $("#store2").on("click", function(){
+                    // 캡쳐 라이브러리를 통해서 canvas 오브젝트를 받고 이미지 파일로 리턴
+                    html2canvas(document.querySelector("#capture2")).then(canvas => {
+                        saveAs(canvas.toDataURL('image/png'),"GIFTI_type.png");
                     });
                 });
                 function saveAs(uri, filename) {

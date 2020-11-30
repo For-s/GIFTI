@@ -21,8 +21,13 @@
             <button class="choice btn btn-sm animated-button thar-three" style="width: 300px;" id='n'
              onclick="btn_event(this.id);">화려하고 내가 계속 사고 싶어 했던 선물</button> 
         </div>
-
-        <button type="button" onClick="next_event(1)" id="next">next</button>
+        <!-- <button type="button" onClick="next_event(1)" id="next">next</button> -->
+        <a onClick="next_event(1)" class="menu__link" style="margin-top: 50px;">
+            next
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+            </svg>
+        </a>
         <p id="copyright">ⓒ 2020. For's all rights reserved.</p>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script type="text/javascript" src="js/button_event.js"></script>
