@@ -50,8 +50,8 @@ module.exports = class Comment extends Sequelize.Model {
     }, {
       sequelize,
       timestamps: false,
-      modelName: 'top3',
-      tableName: 'top3s',
+      modelName: 'gifti',
+      tableName: 'top3',
       paranoid: false,
       charset: 'utf8mb4',
       collate: 'utf8mb4_general_ci',

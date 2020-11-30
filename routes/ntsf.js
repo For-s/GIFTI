@@ -28,6 +28,17 @@ router.route('/')
             console.error(err);
             next(err);
         }
+    })
+    .post(async(req,res,next)=>{
+        var updateData = [
+            req.body.n];
+        var sql = 'UPDATE gifti.ntsf SET n = n+1 WHERE id=1';
+        db.query(sql, updateData, function (err, results) {
+            if(err)
+                console.log(err);
+            console.log(results);
+        });
+        res.redirect('/ntsf');
     });
 
 module.exports = router;

@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
+const bodyParser = require("body-parser");
 
 const { sequelize } = require('./models');
 const ntsfRouter = require('./routes/ntsf');
@@ -9,6 +10,7 @@ const top3Router = require('./routes/top3');
 const pageRouter = require('./routes/page');
 
 const app = express();
+
 app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'html');
 
@@ -22,7 +24,7 @@ sequelize.sync({ force: false })
   })
   .catch((err) => {
     console.error(err);
-  });
+});
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './GIFTI/public')));
@@ -44,6 +46,8 @@ app.use((req, res, next) => {
   next(error);
 });
 
+app.use(bodyParser.urlencoded({ extended : false }));
+
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
@@ -54,4 +58,3 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
 });
-

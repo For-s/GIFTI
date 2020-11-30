@@ -1,5 +1,4 @@
 var choiced_id;
-
 //추가할 것 : DB 연동해서 n,s,t,f 값 0부터 올려가기
 
 var html_list = ['q1','q2','q3','q4','q5.html',
@@ -8,10 +7,20 @@ var html_list = ['q1','q2','q3','q4','q5.html',
 function btn_event (id) {
     choiced_id = id;
 }
+//document.write(`<script type='text/javascript' src='./input_data.js'></script>`);  
 
 function next_event (page) {
     if (choiced_id != null) {
         location.href=html_list[page]; //이거를 아래 if/else문으로 대체
+        //function addJavascript(jsname) {
+        //    var th = document.getElementsByTagName('head')[0];
+        //    var s = document.createElement('script');
+        //    s.setAttribute('type','text/javascript');
+        //    s.setAttribute('src',jsname);
+        //    th.appendChild(s);
+        //}
+        
+        //addJavascript('./input_data.js');
         /*calculate_score();
         
         if(page==10){
@@ -34,26 +43,4 @@ function next_event (page) {
         }
     }
 }
-
-function calculate_score () {
-    switch(choiced_id) {
-        case 'n': 
-            n++;
-            break;
-
-        case 's':
-            s++;
-            break;
-
-        case 't':
-            t++;
-            break;
-
-        case 'f':
-            f++;
-            break;
-        }
-}
-
-
 

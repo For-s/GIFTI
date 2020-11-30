@@ -26,8 +26,8 @@ module.exports = class Comment extends Sequelize.Model {
     }, {
       sequelize,
       timestamps: false,
-      modelName: 'ntsf',
-      tableName: 'ntsfs',
+      modelName: 'gifti',
+      tableName: 'ntsf',
       paranoid: false,
       charset: 'utf8mb4',
       collate: 'utf8mb4_general_ci',
