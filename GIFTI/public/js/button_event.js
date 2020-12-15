@@ -1,36 +1,52 @@
 var choiced_id;
 //추가할 것 : DB 연동해서 n,s,t,f 값 0부터 올려가기
 
-var html_list = ['q1','q2','q3','q4','q5.html',
+var html_list = ['q1','q2.html','q3','q4','q5.html',
 'q6.html','q7.html','q8.html','q9.html','q10.html'];
 
 function btn_event (id) {
     choiced_id = id;
-}
-//document.write(`<script type='text/javascript' src='./input_data.js'></script>`);  
+} 
 
 function next_event (page) {
+    
+    if(page==1) {
+        var data = { s:0, n:0, t:0, f:0, type: null};
+    }
+    
+    else {
+        var data = localStorage.getItem("data");
+        data = JSON.parse(data);
+    }
+
     if (choiced_id != null) {
-        location.href=html_list[page]; //이거를 아래 if/else문으로 대체
-        //function addJavascript(jsname) {
-        //    var th = document.getElementsByTagName('head')[0];
-        //    var s = document.createElement('script');
-        //    s.setAttribute('type','text/javascript');
-        //    s.setAttribute('src',jsname);
-        //    th.appendChild(s);
-        //}
-        
-        //addJavascript('./input_data.js');
-        /*calculate_score();
-        
-        if(page==10){
-            //10번째 페이지인 경우, 개인화 페이지로 간다.
-            db에 타입 저장하는 함수();
+        switch(choiced_id) {
+            case 's': 
+                data.s++;
+                break;
+    
+            case 'n':
+                data.n++;
+                break;
+    
+            case 't':
+                data.t++;
+                break;
+    
+            case 'f':
+                data.f++;
+                break;
         }
-        else {
-            location.href=html_list[page];
-        }
-        */
+        
+
+        localStorage.setItem("data", JSON.stringify(data));
+        console.log(data);
+        window.location.href= html_list[page];
+
+
+
+
+     
     }
     else  {
         if(page<=5) {
@@ -43,4 +59,3 @@ function next_event (page) {
         }
     }
 }
-

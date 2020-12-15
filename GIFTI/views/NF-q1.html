@@ -7,18 +7,21 @@
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
     </head>
     <body>
+        <script type="text/javascript" src="js/personalize_question.js"></script>
         <a href="main" style="text-decoration: none;">
             <!-- <img src="./../public/gift.png" style="width:50px; height:50px;display: inline;"> -->
             <h4 style="font-size: 35px; color:  #F7CA18; text-align: center;">GIFTI</h4>
         </a>
         <p id="question">쇼핑을 하다가 시간이 조금 떴을 때,<br>어디에서 아이쇼핑을 할까요?</p>
         <div class="col-md-3 col-sm-3 col-xs-6"> 
-            <button class="choice btn btn-sm animated-button thar-three" style="width: 300px;">드럭스토어(올리브영 등)에 들어가서 구경한다.</button> 
+            <button class="choice btn btn-sm animated-button thar-three" style="width: 300px;" id="cosmetic"
+            onclick="btn_event(this.id)">드럭스토어(올리브영 등)에 들어가서 구경한다.</button> 
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6"> 
-            <button class="choice btn btn-sm animated-button thar-three" style="width: 300px;">반지, 목걸이를 파는 악세사리 코너를 구경한다.</button> 
+            <button class="choice btn btn-sm animated-button thar-three" style="width: 300px;" id="accessory"
+            onclick="btn_event(this.id)">반지, 목걸이를 파는 악세사리 코너를 구경한다.</button> 
         </div>
-        <button type="button" onClick="location.href='NF-q2.html'" id="next">next</button>
+        <button type="button" onClick="next_page(1)" id="next">next</button>
         <p id="copyright">ⓒ 2020. For's all rights reserved.</p>
     </body>
 </html>

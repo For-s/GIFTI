@@ -9,10 +9,13 @@ router.get('/main', (req, res) => {
   res.render('main', { title: 'main' });
 });
 
+
 router.get(/q/, (req, res) => {
   var url = req.url.replace('/', '');
+  console.log(url)
   res.render(url,{title: 'url'});
 });
+
 
 
 module.exports = router;
