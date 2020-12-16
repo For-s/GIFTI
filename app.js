@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const logger = require('./logger');
 const helmet = require('helmet');
 const hpp = require('hpp');
+const redis = require('redis');
+const RedisStore = require('connect-redis')(session);
 
 const { sequelize } = require('./models');
 const ntsfRouter = require('./routes/ntsf');
@@ -16,6 +18,11 @@ const app = express();
 
 app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'html');
+
+const redisClient = redis.createClient({
+  url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
+  password: process.env.REDIS_PASSWORD,
+});
 
 nunjucks.configure('GIFTI/views', {
   express: app,
