@@ -41,27 +41,23 @@ function type_next (page) {
         case 'NF': 
             NF(item_list);
             console.log(item_list);
-            localStorage.setItem("item_list", JSON.stringify(item_list));
             location.href=NF_list[page];
             break;
 
         case 'NT':
             NT(item_list);
-            localStorage.setItem("item_list", JSON.stringify(item_list));
             console.log(item_list);
             location.href=NT_list[page];
             break;
 
         case 'SF':
             SF(item_list);
-            localStorage.setItem("item_list", JSON.stringify(item_list));
             console.log(item_list);
             location.href=SF_list[page];
             break;
 
         case 'ST':
             ST(item_list);
-            localStorage.setItem("item_list", JSON.stringify(item_list));
             console.log(item_list);
             location.href=ST_list[page];
             break;
@@ -91,19 +87,6 @@ function next_page (page) {
             document.getElementById("t").classList.toggle('shaking');
             document.getElementById("f").classList.toggle('shaking');
         }
-        
-        else {
-            document.getElementById("book").classList.toggle('shaking');
-            document.getElementById("electronic").classList.toggle('shaking');
-            document.getElementById("furniture").classList.toggle('shaking');
-            document.getElementById("leisure").classList.toggle('shaking');
-            document.getElementById("cosmetic").classList.toggle('shaking');
-            document.getElementById("clothes").classList.toggle('shaking');
-            document.getElementById("accessory").classList.toggle('shaking');
-            document.getElementById("kitchen").classList.toggle('shaking');
-            document.getElementById("innerwear").classList.toggle('shaking');
-        }
-        
     }
 }
 
@@ -113,6 +96,7 @@ function NF (item_list) {
             item_list[key] += 0.5; 
         }
         console.log(item_list);
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='accessory') {
@@ -120,6 +104,7 @@ function NF (item_list) {
             item_list[key] += 0.5; 
         }
         console.log(item_list);
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='leisure') {
@@ -127,6 +112,7 @@ function NF (item_list) {
             item_list[key] += 0.5; 
         }
         console.log(item_list);
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='clothes') {
@@ -134,6 +120,7 @@ function NF (item_list) {
             item_list[key] += 0.5; 
         }
         console.log(item_list);
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='innerwear') {
@@ -141,6 +128,7 @@ function NF (item_list) {
             item_list[key] += 0.5; 
         }
         console.log(item_list);
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 }
 
@@ -149,24 +137,28 @@ function NT (item_list) {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='leisure') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='furniture') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='electronic') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 }
 
@@ -175,30 +167,35 @@ function SF (item_list) {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='innerwear') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='bag') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='accessory') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='kitchen') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 }
 
@@ -207,24 +204,28 @@ function ST (item_list) {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='electronic') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='kitchen') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 
     if(choiced_id =='book') {
         for(var key in item_list){
             item_list[key] += 0.2; 
         }
+        localStorage.setItem("item_list", JSON.stringify(item_list));
     }
 }
 
