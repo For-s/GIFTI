@@ -3,6 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const bodyParser = require("body-parser");
+const logger = require('./logger');
 
 const { sequelize } = require('./models');
 const ntsfRouter = require('./routes/ntsf');
@@ -50,6 +51,8 @@ app.get('/', (req,res) => {
 app.use((req, res, next) => {
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
   error.status = 404;
+  logger.info('hello');
+  logger.error(error.message);
   next(error);
 });
 
