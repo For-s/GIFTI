@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
@@ -23,6 +25,13 @@ const redisClient = redis.createClient({
   url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
   password: process.env.REDIS_PASSWORD,
 });
+if (process.env.NODE_ENV === 'production') {
+  app.use(morgan('combined'));
+  app.use(helmet());
+  app.use(hpp());
+} else {
+  app.use(morgan('dev'));
+}
 
 nunjucks.configure('GIFTI/views', {
   express: app,
@@ -35,13 +44,22 @@ sequelize.sync({ force: false })
   .catch((err) => {
     console.error(err);
 });
+app.use(cookieParser(process.env.COOKIE_SECRET));
+const sessionOption = {
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.COOKIE_SECRET,
+  cookie: {
+    httpOnly: true,
+    secure: false,
+  },
+  store: new RedisStore({ client: redisClient }),
+};
 if (process.env.NODE_ENV === 'production') {
-  app.use(morgan('combined'));
-  app.use(helmet());
-  app.use(hpp());
-} else {
-  app.use(morgan('dev'));
+  sessionOption.proxy = true;
+  // sessionOption.cookie.secure = true;
 }
+
 
 //app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './GIFTI/public')));
