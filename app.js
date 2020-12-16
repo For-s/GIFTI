@@ -25,8 +25,15 @@ sequelize.sync({ force: false })
   .catch((err) => {
     console.error(err);
 });
+if (process.env.NODE_ENV === 'production') {
+  app.use(morgan('combined'));
+  app.use(helmet());
+  app.use(hpp());
+} else {
+  app.use(morgan('dev'));
+}
 
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './GIFTI/public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
