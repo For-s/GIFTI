@@ -2,7 +2,7 @@ var choiced_id;
 //추가할 것 : DB 연동해서 n,s,t,f 값 0부터 올려가기
 
 var html_list = ['q1','q2.html','q3','q4','q5.html',
-'q6.html','q7.html','q8.html','q9.html','q10.html'];
+'q6.html','q7.html','q8.html','q9.html','q10.html', 'q_final'];
 
 function btn_event (id) {
     choiced_id = id;
@@ -38,6 +38,23 @@ function next_event (page) {
                 break;
         }
         
+        if(page == 10) {
+            if (data.n>=3 && data.f>=3) {
+               data.type = 'NF'
+            }
+            
+            else if (data.n>=3 && data.t>=3) {
+                data.type = 'NS';
+            }
+            
+            else if (data.s>=3 && data.f>=3) {
+                data.type = 'SF';
+            }
+            
+            else if (data.s>=3 && data.t>=3) {
+                data.type = 'ST';
+            }
+        }
 
         localStorage.setItem("data", JSON.stringify(data));
         console.log(data);
