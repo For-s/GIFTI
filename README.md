@@ -8,8 +8,9 @@
 <br/>
 
 ### 🌱&nbsp;&nbsp;Development Environment / Language
-- JavaScript
+- JavaScript / HTML / CSS
 - Node.js
+- MySQL
 <br/>
 
 ### 👥&nbsp;&nbsp;Team GIFTI
